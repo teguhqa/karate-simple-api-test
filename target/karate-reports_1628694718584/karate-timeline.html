@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[1:8]","start":1628694449036,"end":1628694449148,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[1:8] 22:07:29.036-22:07:29.148 Test a GET sample API 1","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[2:15]","start":1628694449154,"end":1628694449155,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[2:15] 22:07:29.154-22:07:29.155 Test a GET sample API 2","className":"failed"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[3:31]","start":1628694449161,"end":1628694449161,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[3:31] 22:07:29.161-22:07:29.161 Test a Post sample API","className":"failed"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[4:43]","start":1628694449168,"end":1628694449169,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[4:43] 22:07:29.168-22:07:29.169 Test a Post sample API 1","className":"failed"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[5:56]","start":1628694449174,"end":1628694449175,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[5:56] 22:07:29.174-22:07:29.175 Test a Post sample API 2","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

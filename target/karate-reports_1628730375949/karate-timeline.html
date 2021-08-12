@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[1:9]","start":1628729781956,"end":1628729783408,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[1:9] 07:56:21.956-07:56:23.408 Test a GET sample API 1"},{"id":2,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[2:16]","start":1628729783413,"end":1628729784207,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[2:16] 07:56:23.413-07:56:24.207 Test a GET sample API 2"},{"id":3,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[3:32]","start":1628729784212,"end":1628729785446,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[3:32] 07:56:24.212-07:56:25.446 Test a Post sample API"},{"id":4,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[4:44]","start":1628729785451,"end":1628729786676,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[4:44] 07:56:25.451-07:56:26.676 Test a Post sample API 1"},{"id":5,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[5:57]","start":1628729786680,"end":1628729787894,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[5:57] 07:56:26.680-07:56:27.894 Test a Post sample API 2"},{"id":6,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[6:71]","start":1628729787899,"end":1628729789101,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[6:71] 07:56:27.899-07:56:29.101 Test a Post sample API 3"},{"id":7,"group":1,"content":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[7:86]","start":1628729789104,"end":1628729790353,"title":"src\/test\/java\/tests\/feature1\/FirstTestFeature1[7:86] 07:56:29.104-07:56:30.353 Test a Post sample API 4"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
